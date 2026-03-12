@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portfolio | Daniel Buti Dipeere</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+<title>Portfolio | Daniel Buti Dipeere</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+<!-- TOP BAR / NAVIGATION -->
 <header class="top-bar">
+  <h1 class="site-title">Portfolio Website of Daniel Buti Dipeere</h1>
 
-    <h1 class="site-title">
-        Portfolio Website of Daniel Buti Dipeere
-    </h1>
-
-    <nav class="main-nav">
-        <a href="#">About Me</a>
-        <a href="#">Projects</a>
-        <a href="#">Skills</a>
-        <a href="#">Contacts</a>
-    </nav>
-
+  <nav class="main-nav">
+    <button data-section="about">About Me</button>
+    <button data-section="projects">Projects</button>
+    <button data-section="skills">Skills</button>
+    <button data-section="contacts">Contacts</button>
+  </nav>
 </header>
 
+<!-- HERO SECTION -->
+<section class="hero">
 
+  <!-- Left: Dynamic content -->
+  <div class="hero-content" id="hero-content">
+    <p>Welcome! Click a button to see my info.</p>
+  </div>
+
+  <!-- Right: Profile image + Name -->
+  <div class="hero-image">
+    <img src="images/profile.jpg" alt="Daniel Buti Dipeere">
+    <h2>Daniel Buti Dipeere</h2>
+  </div>
+
+</section>
+
+<!-- JS -->
 <script src="js/script.js"></script>
-
 </body>
 </html>
