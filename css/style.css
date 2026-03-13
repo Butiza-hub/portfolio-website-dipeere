@@ -33,20 +33,30 @@ body {
 }
 
 .main-nav button {
-    background: none;
-    border: 2px solid #00bfff;
-    color: white;
+    background: none;       /* no background */
+    border: none;           /* remove border normally */
+    color: white;           /* text stays white */
     padding: 8px 14px;
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
-    border-radius: 4px;
+    border-radius: 4px;     /* base radius for smooth transition */
+    outline: none;          /* remove default blue focus ring */
 }
 
+/* Hover: optional subtle effect only on text */
 .main-nav button:hover {
-    background-color: #00bfff;
-    color: black;
-    box-shadow: 0 6px 14px #e90d68;
+    color: #00bfff;
+}
+
+/* Pressed / active button: shadow + rounding only */
+.main-nav button:active,
+.main-nav button.active {
+    border: none;                /* no blue border */
+    background: none;            /* no blue background */
+    border-radius: 20px;         /* fully rounded */
+    color: white;                /* text stays white */
+    box-shadow: 0 6px 14px #e90d68;  /* shadow indicates pressed button */
     transform: translateY(-2px);
 }
 
@@ -81,15 +91,6 @@ body {
 .hero-image h2 {
     margin-top: 20px;
     font-size: 28px;
-    color: #00bfff;
-    font-family: 'Lobster', cursive;
-    text-shadow: 0 0 6px rgba(0,191,255,0.7);
-}
-
-/* ACTIVE BUTTON HIGHLIGHT */
-.main-nav button.active {
-    background-color: #00bfff;
-    color: black;
-    box-shadow: 0 6px 14px #e90d68;
-    transform: translateY(-2px);
+    color: #4cbe16;
+    font-family: Clarity City Thin Italic 100;
 }
