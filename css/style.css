@@ -94,3 +94,27 @@ body {
     color: #4cbe16;
     font-family: Clarity City Thin Italic 100;
 }
+
+/* Project paragraph colors */
+.project-ssa {
+    color: #4cbe16;      /* green for SSA project */
+    font-weight: bold;
+}
+
+.project-inspiration {
+    color: #e90d68;      /* pink/red for Inspiration-26 */
+    font-weight: bold;
+}
+
+/* Optional: style project divs */
+.project {
+    margin-bottom: 20px;
+}
+
+.project img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+    display: block;
+    margin-bottom: 8px;
+}
