@@ -42,15 +42,39 @@ const addImageHint = () => {
 
 // Function to setup project images (click to enlarge, double-click for full-screen)
 const setupProjectImages = () => {
+
     const imgs = document.querySelectorAll(".project-screenshot");
+    const lightbox = document.getElementById("image-lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox-close");
+
     imgs.forEach(img => {
+
+        let clickTimer = null;
+
         img.addEventListener("click", () => {
-            img.classList.toggle("large");
+            clickTimer = setTimeout(() => {
+                img.classList.toggle("large");
+            }, 200);
         });
+
         img.addEventListener("dblclick", () => {
-            window.open(img.src, "_blank");
+            clearTimeout(clickTimer);
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src;
         });
+
     });
+
+    closeBtn.onclick = () => {
+        lightbox.style.display = "none";
+    };
+
+    lightbox.onclick = (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
+        }
+    };
 
     addImageHint();
 };
@@ -64,15 +88,15 @@ const showProject = (projectId) => {
         html = `
         <p class="project-inspiration"><strong>Inspiration-26:</strong> Personal web development project demonstrating HTML, CSS, JS, Git, and GitHub skills. Features a dynamic hero section, interactive cards, and responsive design.</p>
         <div class="project-images">
-            <img src="images/inspiration26.png" class="project-screenshot" alt="Inspiration-26 Screenshot">
+            <img src="Images/Inspiration26.png" class="project-screenshot" alt="Inspiration Screenshot">
         </div>`;
     } else if (projectId === "ssa") {
         html = `
         <p class="project-ssa"><strong>Project 25 – SSA:</strong> Front-end simulation of a residential security system dashboard with arming/disarming, exit delay, and zone monitoring.</p>
         <div class="project-images">
-            <img src="images/ssa1.png" class="project-screenshot" alt="SSA Screenshot 1">
-            <img src="images/ssa2.png" class="project-screenshot" alt="SSA Screenshot 2">
-            <img src="images/ssa3.png" class="project-screenshot" alt="SSA Screenshot 3">
+            <img src="Images/ssa/ssa1.png" class="project-screenshot" alt="SSA Screenshot 1">
+            <img src="Images/ssa/ssa2.png" class="project-screenshot" alt="SSA Screenshot 2">
+            <img src="Images/ssa/ssa3.png" class="project-screenshot" alt="SSA Screenshot 3">
         </div>`;
     }
 
