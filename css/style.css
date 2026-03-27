@@ -122,6 +122,10 @@ body {
         0 6px 18px rgba(0,0,0,0.8);
 }
 
+.hero {
+    background: url('../images/background.jpg') no-repeat center center/cover;
+}
+
 /* ======================================
    PROJECTS SECTION
 ====================================== */
@@ -309,4 +313,29 @@ body {
   font-size: 40px;
   color: white;
   cursor: pointer;
+}
+
+/* SAFE ADDITION */
+.project img {
+  width: 100%;
+  max-width: 250px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.about-highlights {
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.about-highlights li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #00bfff;
 }
