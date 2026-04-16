@@ -98,7 +98,7 @@ const showProject = (projectId) => {
         html = `
         <p class="project-inspiration26"><strong>Inspiration-26:</strong> Dynamic web project.</p>
         <div class="project-images">
-            <img src="images/inspiration.png" class="project-screenshot">
+            <img src="./images/inspiration.png" class="project-screenshot">
         </div>`;
     }
 
@@ -106,9 +106,9 @@ const showProject = (projectId) => {
         html = `
         <p class="project-ssa"><strong>Project 25 – SSA:</strong> Security system dashboard.</p>
         <div class="project-images">
-            <img src="images/ssa/ssa1.png" class="project-screenshot">
-            <img src="images/ssa/ssa2.png" class="project-screenshot">
-            <img src="images/ssa/ssa3.png" class="project-screenshot">
+            <img src="./images/ssa/ssa1.png" class="project-screenshot">
+            <img src="./images/ssa/ssa2.png" class="project-screenshot">
+            <img src="./images/ssa/ssa3.png" class="project-screenshot">
         </div>`;
     }
 
