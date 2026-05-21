@@ -339,3 +339,14 @@ body {
   font-size: 16px;
   color: #00bfff;
 }
+
+/* PROJECT IMAGES */
+.project-image {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 2px solid #00bfff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+}
