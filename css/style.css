@@ -36,9 +36,9 @@ body {
 .site-title {
     margin: 0;
     font-size: 40px;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
     color: #0dd8e6;
-    font-family: 'Montserrat', sans-serif;
+    font-family: font-family: 'Bebas Neue', sans-serif;
     text-shadow: 0 0 8px rgba(247, 7, 7, 0.8);
 }
 
