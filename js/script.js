@@ -28,12 +28,78 @@ const sections = {
   </ul>
 `,
 
-  skills: `<ul>
-    <li>HTML5 – semantic markup and structure</li>
-    <li>CSS3 – responsive layouts, Flexbox, Grid, animations</li>
-    <li>JavaScript – DOM manipulation, event handling, interactive features</li>
-    <li>Git & GitHub – version control, project management</li>
-  </ul>`,
+skills: `
+  <div class="skills-section">
+
+    <h2>Skills & Technologies</h2>
+
+    <p class="skills-intro">
+      Technologies and development tools I use while building and
+      developing web projects.
+    </p>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="devicon-html5-plain colored"></i>
+        </div>
+        <h3>HTML5</h3>
+        <p>Semantic markup and website structure</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="devicon-css3-plain colored"></i>
+        </div>
+        <h3>CSS3</h3>
+        <p>Responsive layouts, Flexbox, Grid and animations</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="devicon-javascript-plain colored"></i>
+        </div>
+        <h3>JavaScript</h3>
+        <p>DOM manipulation, events and interactive features</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="devicon-git-plain colored"></i>
+        </div>
+        <h3>Git</h3>
+        <p>Version control and development workflow</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="devicon-github-original"></i>
+        </div>
+        <h3>GitHub</h3>
+        <p>Repository management and project deployment</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="devicon-bash-plain"></i>
+        </div>
+        <h3>Command Line</h3>
+        <p>File navigation and terminal-based development</p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="devicon-react-original colored"></i>
+        </div>
+        <h3>React</h3>
+        <p>JSX, components and interactive user interfaces</p>
+      </div>
+
+    </div>
+
+  </div>
+`,
 
   contacts: `<p>Email: <a href="mailto:butinyana2017@gmail.com">butinyana2017@gmail.com</a></p>
              <p>GitHub: <a href="https://github.com/Butiza-hub" target="_blank">github.com/Butiza-hub</a></p>`,

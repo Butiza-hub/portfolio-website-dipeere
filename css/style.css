@@ -170,27 +170,6 @@ body {
     letter-spacing: 0.6px;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-    .hero {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        padding: 30px 20px;
-    }
-
-    .hero-content {
-        min-height: auto;
-        padding: 24px;
-        text-align: left;
-    }
-
-    .hero-image {
-        width: auto;
-        max-width: 320px;
-        margin: 0 auto;
-    }
-}
-
 /* ======================================
    PROJECTS SECTION
 ====================================== */
@@ -208,7 +187,10 @@ body {
     font-weight: bold;
     font-size: 20px;
     cursor: pointer;
-    transition: color 0.3s, text-shadow 0.3s, box-shadow 0.3s;
+    transition:
+        color 0.3s,
+        text-shadow 0.3s,
+        box-shadow 0.3s;
     padding: 10px;
     border-radius: 6px;
 }
@@ -254,7 +236,10 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.6);
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s, width 0.3s;
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        width 0.3s;
     object-fit: cover;
     margin-right: 15px;
     margin-bottom: 15px;
@@ -274,64 +259,107 @@ body {
     box-shadow: 0 8px 24px rgba(0,0,0,0.9);
 }
 
-/* Responsive adjustments for mobile devices */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        align-items: center;
-        padding: 30px 20px;
-    }
-
-    .hero-content {
-        max-width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .hero-image {
-        width: 200px;
-    }
-
-    .project-screenshot {
-        width: 45%;
-        margin-right: 10px;
-        margin-bottom: 10px;
-    }
-
-    .project-screenshot.large {
-        width: 90%;
-        max-width: 90%;
-    }
+/* ======================================
+   SKILLS & TECHNOLOGIES
+====================================== */
+.skills-section {
+    width: 100%;
 }
 
-@media (max-width: 480px) {
-    .project-screenshot {
-        width: 80%;
-        margin-right: 0;
-        margin-bottom: 15px;
-    }
-
-    .project-screenshot.large {
-        width: 95%;
-        max-width: 95%;
-    }
+.skills-intro {
+    margin-top: -5px;
+    margin-bottom: 28px;
+    color: #aeb8c2;
+    font-size: 16px;
 }
 
-/* MOBILE FIX: Skills section alignment */
-@media (max-width: 768px) {
-    .hero-content ul {
-        display: block;
-        padding-left: 20px;
-        list-style-position: inside;
-    }
-
-    .hero-content ul li {
-        margin-bottom: 10px;
-        text-align: left;
-        font-size: 16px;
-    }
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
 }
 
+.skill-card {
+    padding: 22px 18px;
+    background: rgba(10, 16, 22, 0.82);
+    border: 1px solid rgba(53, 199, 255, 0.16);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(53, 199, 255, 0.65);
+    background: rgba(14, 22, 30, 0.92);
+    box-shadow:
+        0 10px 26px rgba(0, 0, 0, 0.35),
+        0 0 18px rgba(53, 199, 255, 0.15);
+}
+
+.skill-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+    border: 1px solid rgba(53, 199, 255, 0.28);
+    background: rgba(53, 199, 255, 0.05);
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: #35c7ff;
+
+    box-shadow:
+        inset 0 0 14px rgba(53, 199, 255, 0.05);
+}
+
+.skill-card h3 {
+    margin: 0 0 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #e6edf3;
+}
+
+.skill-card p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #9faab5;
+}
+
+.skill-icon i {
+    font-size: 42px;
+}
+
+/* ======================================
+   ABOUT ME
+====================================== */
+.about-highlights {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.about-highlights li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #00bfff;
+}
+
+/* ======================================
+   IMAGE HINT
+====================================== */
 .image-hint {
     font-size: 14px;
     color: #bbbbbb;
@@ -340,7 +368,9 @@ body {
     text-align: left;
 }
 
-/* LIGHTBOX VIEWER */
+/* ======================================
+   LIGHTBOX VIEWER
+====================================== */
 .lightbox {
     display: none;
     position: fixed;
@@ -370,7 +400,9 @@ body {
     cursor: pointer;
 }
 
-/* SAFE ADDITION */
+/* ======================================
+   LEGACY PROJECT IMAGE SUPPORT
+====================================== */
 .project img {
     width: 100%;
     max-width: 250px;
@@ -384,18 +416,6 @@ body {
     gap: 10px;
 }
 
-.about-highlights {
-    margin-top: 20px;
-    padding-left: 20px;
-}
-
-.about-highlights li {
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #00bfff;
-}
-
-/* PROJECT IMAGES */
 .project-image {
     width: 100%;
     max-width: 500px;
@@ -404,4 +424,70 @@ body {
     border-radius: 8px;
     border: 2px solid #00bfff;
     box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+}
+
+/* ======================================
+   RESPONSIVE DESIGN
+====================================== */
+@media (max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 30px 20px;
+        background-attachment: scroll;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        min-height: auto;
+        padding: 24px;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .hero-image {
+        width: auto;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .project-screenshot {
+        width: 45%;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .project-screenshot.large {
+        width: 90%;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 520px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        padding: 20px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-screenshot {
+        width: 80%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .project-screenshot.large {
+        width: 95%;
+        max-width: 95%;
+    }
 }
