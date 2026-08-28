@@ -171,6 +171,856 @@ body {
 }
 
 /* ======================================
+   ROOT 04 - PROJECTS SHOWCASE
+====================================== */
+
+.projects-showcase {
+    display: grid;
+    grid-template-columns: minmax(230px, 0.8fr) minmax(0, 1.4fr);
+    gap: 28px;
+    width: 100%;
+}
+
+/* ======================================
+   PROJECTS LEFT PANEL
+====================================== */
+
+.projects-sidebar {
+    padding-right: 26px;
+    border-right: 1px solid rgba(53, 199, 255, 0.16);
+}
+
+.projects-heading h2 {
+    margin: 0 0 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    color: #35c7ff;
+}
+
+.projects-heading p {
+    margin: 0 0 28px;
+    color: #9faab5;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* ======================================
+   PROJECT SELECTOR
+====================================== */
+
+.projects-showcase .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 0;
+    counter-reset: none;
+}
+
+.projects-showcase .project-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 16px;
+
+    background: rgba(10, 16, 22, 0.72);
+    border: 1px solid rgba(53, 199, 255, 0.12);
+    border-radius: 10px;
+
+    color: #d8e0e7;
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Disable old automatic numbering */
+.projects-showcase .project-link::before {
+    content: none;
+}
+
+.projects-showcase .project-link:hover {
+    transform: translateX(5px);
+
+    color: #ffffff;
+
+    border-color: rgba(53, 199, 255, 0.55);
+
+    background: rgba(53, 199, 255, 0.06);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.28),
+        0 0 16px rgba(53, 199, 255, 0.08);
+}
+
+.projects-showcase .project-link.active-project {
+    transform: translateX(5px);
+
+    color: #ffffff;
+
+    border-color: #35c7ff;
+
+    background: rgba(53, 199, 255, 0.10);
+
+    box-shadow:
+        0 0 12px rgba(53, 199, 255, 0.18),
+        inset 3px 0 0 #35c7ff;
+
+    text-shadow: none;
+}
+
+
+/* ======================================
+   PROJECT NUMBER
+====================================== */
+
+.project-number {
+    min-width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: rgba(53, 199, 255, 0.07);
+    border: 1px solid rgba(53, 199, 255, 0.25);
+
+    color: #35c7ff;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* ======================================
+   PROJECT SELECTOR TEXT
+====================================== */
+
+.projects-showcase .project-link strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+
+    color: #e6edf3;
+}
+
+.projects-showcase .project-link small {
+    display: block;
+
+    color: #84919d;
+
+    font-size: 12px;
+    font-weight: normal;
+}
+
+
+/* ======================================
+   PROJECT DISPLAY PANEL
+====================================== */
+
+.projects-display {
+    min-width: 0;
+
+    display: flex;
+    align-items: stretch;
+}
+
+.project-content-placeholder {
+    width: 100%;
+    min-height: 390px;
+
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12, 20, 27, 0.88),
+            rgba(7, 12, 17, 0.92)
+        );
+
+    border: 1px solid rgba(53, 199, 255, 0.15);
+    border-radius: 12px;
+
+    box-shadow:
+        inset 0 0 35px rgba(53, 199, 255, 0.025),
+        0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+.project-content-placeholder h3 {
+    margin: 22px 0 8px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+
+    color: #e6edf3;
+}
+
+.project-content-placeholder > p {
+    max-width: 360px;
+
+    margin: 0;
+
+    color: #84919d;
+
+    font-size: 14px;
+}
+
+/* ======================================
+   ROOT 05 - CONTACTS SHOWCASE
+====================================== */
+
+.contacts-showcase {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    gap: 30px;
+    width: 100%;
+}
+
+
+/* ======================================
+   CONTACTS LEFT SIDE
+====================================== */
+
+.contacts-details {
+    padding-right: 28px;
+    border-right: 1px solid rgba(53, 199, 255, 0.16);
+}
+
+.contacts-heading h2 {
+    margin: 0 0 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    color: #35c7ff;
+}
+
+.contacts-heading p {
+    margin: 0 0 28px;
+    color: #9faab5;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* ======================================
+   CONTACT CARDS
+====================================== */
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 16px 18px;
+
+    text-decoration: none;
+
+    background: rgba(10, 16, 22, 0.72);
+    border: 1px solid rgba(53, 199, 255, 0.12);
+    border-radius: 10px;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.contact-card:hover {
+    transform: translateX(5px);
+
+    border-color: rgba(53, 199, 255, 0.60);
+
+    background: rgba(53, 199, 255, 0.06);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.28),
+        0 0 16px rgba(53, 199, 255, 0.10);
+}
+
+
+/* ======================================
+   CONTACT ICONS
+====================================== */
+
+.contact-icon {
+    min-width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(53, 199, 255, 0.06);
+    border: 1px solid rgba(53, 199, 255, 0.22);
+
+    color: #35c7ff;
+
+    font-size: 27px;
+}
+
+.contact-icon i {
+    font-size: 30px;
+}
+
+.email-contact {
+    font-size: 25px;
+}
+
+
+/* ======================================
+   CONTACT TEXT
+====================================== */
+
+.contact-info {
+    min-width: 0;
+}
+
+.contact-label {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #35c7ff;
+
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.contact-info strong {
+    display: block;
+
+    color: #e6edf3;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ======================================
+   CONTACT VISUAL PANEL
+====================================== */
+
+.contacts-visual {
+    min-height: 390px;
+
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12, 20, 27, 0.88),
+            rgba(7, 12, 17, 0.92)
+        );
+
+    border: 1px solid rgba(53, 199, 255, 0.15);
+    border-radius: 12px;
+
+    box-shadow:
+        inset 0 0 35px rgba(53, 199, 255, 0.025),
+        0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ======================================
+   COMMUNICATION ANIMATION
+====================================== */
+
+.communication-display {
+    position: relative;
+
+    width: 180px;
+    height: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.communication-ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(53, 199, 255, 0.28);
+}
+
+.ring-one {
+    width: 115px;
+    height: 115px;
+
+    animation: contactPulse 2.8s ease-in-out infinite;
+}
+
+.ring-two {
+    width: 155px;
+    height: 155px;
+
+    border-style: dashed;
+
+    opacity: 0.45;
+
+    animation: contactRotate 12s linear infinite;
+}
+
+.communication-core {
+    position: relative;
+    z-index: 3;
+
+    width: 78px;
+    height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(53, 199, 255, 0.07);
+    border: 1px solid rgba(53, 199, 255, 0.32);
+
+    box-shadow:
+        inset 0 0 20px rgba(53, 199, 255, 0.08),
+        0 0 20px rgba(53, 199, 255, 0.08);
+}
+
+.communication-core span {
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    color: #35c7ff;
+}
+
+
+/* ======================================
+   SIGNAL NODES
+====================================== */
+
+.signal-node {
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #35c7ff;
+
+    box-shadow:
+        0 0 7px #35c7ff,
+        0 0 14px rgba(53, 199, 255, 0.70);
+}
+
+.node-one {
+    top: 18px;
+    left: 50%;
+}
+
+.node-two {
+    right: 18px;
+    bottom: 42px;
+}
+
+.node-three {
+    left: 22px;
+    bottom: 48px;
+}
+
+
+/* ======================================
+   CONTACT VISUAL TEXT
+====================================== */
+
+.contacts-visual h3 {
+    margin: 18px 0 8px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+
+    color: #e6edf3;
+}
+
+.contacts-visual p {
+    max-width: 340px;
+
+    margin: 0;
+
+    color: #84919d;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* ======================================
+   CONTACT STATUS
+====================================== */
+
+.contact-status {
+    margin-top: 20px;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(76, 190, 22, 0.35);
+    background: rgba(76, 190, 22, 0.06);
+
+    color: #73d84a;
+
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+}
+
+
+/* ======================================
+   CONTACT ANIMATIONS
+====================================== */
+
+@keyframes contactPulse {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
+@keyframes contactRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ======================================
+   CONTACTS RESPONSIVE
+====================================== */
+
+@media (max-width: 900px) {
+    .contacts-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .contacts-details {
+        padding-right: 0;
+        padding-bottom: 24px;
+
+        border-right: none;
+        border-bottom: 1px solid rgba(53, 199, 255, 0.16);
+    }
+
+    .contacts-visual {
+        min-height: 330px;
+    }
+}
+
+@media (max-width: 520px) {
+    .contact-card {
+        padding: 14px;
+    }
+
+    .contact-icon {
+        min-width: 46px;
+        height: 46px;
+    }
+
+    .contacts-visual {
+        padding: 20px;
+    }
+}
+
+/* ======================================
+   TECH VISUAL
+====================================== */
+
+.project-tech-visual {
+    position: relative;
+
+    width: 130px;
+    height: 130px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-ring {
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    border: 1px solid rgba(53, 199, 255, 0.45);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 18px rgba(53, 199, 255, 0.10),
+        inset 0 0 18px rgba(53, 199, 255, 0.05);
+
+    animation: techPulse 2.5s ease-in-out infinite;
+}
+
+.tech-ring::before {
+    content: "";
+
+    position: absolute;
+
+    top: -8px;
+    left: 50%;
+
+    width: 14px;
+    height: 14px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: #35c7ff;
+
+    box-shadow:
+        0 0 8px #35c7ff,
+        0 0 18px rgba(53, 199, 255, 0.75);
+}
+
+.tech-ring::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border-radius: 50%;
+
+    border: 1px dashed rgba(53, 199, 255, 0.22);
+
+    animation: techRotate 8s linear infinite;
+}
+
+.tech-core {
+    position: relative;
+    z-index: 2;
+
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(53, 199, 255, 0.06);
+    border: 1px solid rgba(53, 199, 255, 0.28);
+
+    color: #35c7ff;
+
+    font-family: monospace;
+    font-size: 21px;
+    font-weight: bold;
+
+    box-shadow:
+        inset 0 0 20px rgba(53, 199, 255, 0.06),
+        0 0 20px rgba(53, 199, 255, 0.08);
+}
+
+
+/* ======================================
+   SYSTEM READY STATUS
+====================================== */
+
+.project-status {
+    margin-top: 22px;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(76, 190, 22, 0.35);
+    background: rgba(76, 190, 22, 0.06);
+
+    color: #73d84a;
+
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 1.4px;
+}
+
+
+/* ======================================
+   PROJECT DETAILS
+====================================== */
+
+.project-details {
+    width: 100%;
+}
+
+.project-details h3 {
+    margin: 10px 0 12px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+
+    color: #e6edf3;
+}
+
+.project-details p {
+    margin: 0 0 18px;
+
+    color: #aeb8c2;
+
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.project-type {
+    display: inline-block;
+
+    color: #35c7ff;
+
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 1.3px;
+}
+
+
+/* ======================================
+   TECHNOLOGY TAGS
+====================================== */
+
+.project-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-bottom: 22px;
+}
+
+.project-tech-stack span {
+    padding: 6px 10px;
+
+    border-radius: 6px;
+
+    background: rgba(53, 199, 255, 0.06);
+    border: 1px solid rgba(53, 199, 255, 0.18);
+
+    color: #9ddff8;
+
+    font-size: 12px;
+}
+
+
+/* ======================================
+   TECH ANIMATIONS
+====================================== */
+
+@keyframes techPulse {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.65;
+    }
+
+    50% {
+        transform: scale(1.06);
+        opacity: 1;
+    }
+}
+
+@keyframes techRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ======================================
+   ROOT 04 RESPONSIVE
+====================================== */
+
+@media (max-width: 900px) {
+    .projects-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-sidebar {
+        padding-right: 0;
+        padding-bottom: 24px;
+
+        border-right: none;
+        border-bottom: 1px solid rgba(53, 199, 255, 0.16);
+    }
+
+    .project-content-placeholder {
+        min-height: 330px;
+    }
+}
+
+@media (max-width: 520px) {
+    .projects-showcase .project-link {
+        padding: 14px;
+    }
+
+    .project-number {
+        min-width: 38px;
+        height: 38px;
+    }
+
+    .project-content-placeholder {
+        padding: 20px;
+    }
+}
+
+/* ======================================
    PROJECTS SECTION
 ====================================== */
 .projects-list {
@@ -228,6 +1078,8 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     margin-top: 15px;
+
+    align-items: flex-start;
 }
 
 .project-screenshot {
