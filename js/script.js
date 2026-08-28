@@ -2,29 +2,35 @@ const contentArea = document.getElementById("hero-content");
 const navButtons = document.querySelectorAll(".main-nav button");
 
 const sections = {
-  about: `
+about: `
   <h2>About Me</h2>
 
   <p>
-    I am a motivated professional with experience in business management, logistics, and operations.
-    I bring strong organizational skills, problem-solving ability, and a results-driven mindset into everything I do.
+    I am a motivated professional with a background in business management, logistics, and operations.
+    I bring strong organisational, communication, problem-solving, and decision-making skills developed
+    through practical professional experience.
   </p>
 
   <p>
-    Recently, I have been expanding my skills in web development, building practical projects using
-    HTML, CSS, JavaScript, Git, and GitHub.
+    I am currently developing my skills in full-stack web development, working with HTML, CSS,
+    JavaScript, Git, GitHub, the command line, and React. Through practical projects, I have gained
+    experience in building responsive user interfaces, implementing interactive JavaScript functionality,
+    managing projects with version control, and deploying web applications online.
   </p>
 
   <p>
-    My goal is to combine my professional experience with technical knowledge to build user-friendly,
-    well-designed web solutions.
+    I enjoy solving problems, developing ideas from concept into working applications, and continuously
+    expanding my technical knowledge. My goal is to combine my professional and business experience
+    with software development skills to create practical, user-focused digital solutions and continue
+    growing as a full-stack developer.
   </p>
 
   <ul class="about-highlights">
-    <li>💼 Business & Operations Background</li>
-    <li>🌐 Full-Stack Development (HTML, CSS, JavaScript, Git)</li>
-    <li>🚀 Passion for Learning & Growth</li>
-    <li>🧠 Strong Problem-Solving Mindset</li>
+    <li>💼 Business Management, Logistics & Operations Background</li>
+    <li>🌐 Full-Stack Web Development</li>
+    <li>💻 HTML5, CSS3, JavaScript, Git, GitHub & React</li>
+    <li>🛠️ Practical Project Development & Problem Solving</li>
+    <li>🚀 Continuous Learning & Technical Growth</li>
   </ul>
 `,
 
@@ -101,8 +107,28 @@ skills: `
   </div>
 `,
 
-  contacts: `<p>Email: <a href="mailto:butinyana2017@gmail.com">butinyana2017@gmail.com</a></p>
-             <p>GitHub: <a href="https://github.com/Butiza-hub" target="_blank">github.com/Butiza-hub</a></p>`,
+   contacts: `
+  <p>
+    Email:
+    <a href="mailto:butinyana2017@gmail.com">
+      butinyana2017@gmail.com
+    </a>
+  </p>
+
+  <p>
+    GitHub:
+    <a href="https://github.com/Butiza-hub" target="_blank">
+      github.com/Butiza-hub
+    </a>
+  </p>
+
+  <p>
+    LinkedIn:
+    <a href="https://www.linkedin.com/in/daniel-dipeere-958713175/" target="_blank">
+      linkedin.com/in/daniel-dipeere-958713175
+    </a>
+  </p>
+`, 
 
   projects: `
   <div class="projects-list">
