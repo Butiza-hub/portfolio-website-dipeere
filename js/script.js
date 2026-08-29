@@ -172,51 +172,53 @@ const sections = {
 
       </div>
 
-<div class="contacts-visual" id="contact-animation">
+      <div class="contacts-visual" id="contact-animation">
 
-  <div class="network-display">
+        <div class="network-display">
 
-    <div class="network-core">
-      <span>CONNECT</span>
+          <div class="network-core">
+            <span>CONNECT</span>
+          </div>
+
+          <div class="network-line line-email"></div>
+          <div class="network-line line-github"></div>
+          <div class="network-line line-linkedin"></div>
+
+          <div class="network-node email-node">
+            <span>✉</span>
+            <small>Email</small>
+          </div>
+
+          <div class="network-node github-node">
+            <i class="devicon-github-original"></i>
+            <small>GitHub</small>
+          </div>
+
+          <div class="network-node linkedin-node">
+            <i class="devicon-linkedin-plain colored"></i>
+            <small>LinkedIn</small>
+          </div>
+
+          <span class="signal-dot signal-email"></span>
+          <span class="signal-dot signal-github"></span>
+          <span class="signal-dot signal-linkedin"></span>
+
+        </div>
+
+        <h3>Professional Network</h3>
+
+        <p>
+          Connect through email, GitHub, or LinkedIn.
+        </p>
+
+        <div class="animation-hint">
+          CLICK TO ACTIVATE NETWORK
+        </div>
+
+      </div>
+
     </div>
-
-    <div class="network-line line-email"></div>
-    <div class="network-line line-github"></div>
-    <div class="network-line line-linkedin"></div>
-
-    <div class="network-node email-node">
-      <span>✉</span>
-      <small>Email</small>
-    </div>
-
-    <div class="network-node github-node">
-      <i class="devicon-github-original"></i>
-      <small>GitHub</small>
-    </div>
-
-    <div class="network-node linkedin-node">
-      <i class="devicon-linkedin-plain colored"></i>
-      <small>LinkedIn</small>
-    </div>
-
-    <span class="signal-dot signal-email"></span>
-    <span class="signal-dot signal-github"></span>
-    <span class="signal-dot signal-linkedin"></span>
-
-  </div>
-
-  <h3>Professional Network</h3>
-
-  <p>
-    Connect through email, GitHub, or LinkedIn.
-  </p>
-
-  <div class="animation-hint">
-    CLICK TO ACTIVATE NETWORK
-  </div>
-
-</div>
-`,
+  `,
 
   projects: `
     <div class="projects-showcase">
@@ -446,6 +448,65 @@ const showProject = (projectId) => {
   setupProjectImages();
 };
 
+
+const setupContactAnimation = () => {
+  const contactVisual = document.getElementById("contact-animation");
+
+  if (!contactVisual) return;
+
+  let animationRunning = false;
+
+  contactVisual.addEventListener("click", () => {
+
+    if (animationRunning) return;
+
+    animationRunning = true;
+
+    const hint = contactVisual.querySelector(".animation-hint");
+
+    contactVisual.classList.remove("network-active");
+
+    void contactVisual.offsetWidth;
+
+    contactVisual.classList.add("network-active");
+
+    if (hint) {
+      hint.textContent = "ACTIVATING NETWORK...";
+    }
+
+    setTimeout(() => {
+      if (hint) {
+        hint.textContent = "SIGNAL ORBIT ACTIVE";
+      }
+    }, 800);
+
+    setTimeout(() => {
+      if (hint) {
+        hint.textContent = "CONNECTING NODES...";
+      }
+    }, 1750);
+
+    setTimeout(() => {
+      if (hint) {
+        hint.textContent = "NETWORK CONNECTED";
+      }
+    }, 2550);
+
+    setTimeout(() => {
+
+      contactVisual.classList.remove("network-active");
+
+      if (hint) {
+        hint.textContent = "CLICK TO ACTIVATE NETWORK";
+      }
+
+      animationRunning = false;
+
+    }, 3600);
+
+  });
+};
+
 navButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     const section = btn.getAttribute("data-section");
@@ -470,6 +531,10 @@ navButtons.forEach((btn) => {
           showProject(link.dataset.project);
         });
       });
+    }
+
+    if (section === "contacts") {
+      setupContactAnimation();
     }
   });
 });

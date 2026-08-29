@@ -557,6 +557,599 @@ body {
         0 10px 28px rgba(0, 0, 0, 0.25);
 }
 
+/* ======================================
+   CONTACT NETWORK INTERACTIVE VISUAL
+====================================== */
+
+.contacts-visual {
+    cursor: pointer;
+}
+
+.network-display {
+    position: relative;
+    width: 260px;
+    height: 210px;
+    margin-bottom: 12px;
+}
+
+/* CENTRAL NODE */
+.network-core {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 78px;
+    height: 78px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(53, 199, 255, 0.07);
+    border: 1px solid rgba(53, 199, 255, 0.35);
+    box-shadow:
+        inset 0 0 20px rgba(53, 199, 255, 0.08),
+        0 0 20px rgba(53, 199, 255, 0.08);
+    z-index: 5;
+}
+
+.network-core span {
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #35c7ff;
+}
+
+/* NETWORK NODES */
+.network-node {
+    position: absolute;
+    width: 62px;
+    height: 62px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(10, 16, 22, 0.92);
+    border: 1px solid rgba(53, 199, 255, 0.18);
+    color: #dce6ee;
+    opacity: 0.75;
+    transition:
+        opacity 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.network-node i {
+    font-size: 24px;
+}
+
+.network-node span {
+    font-size: 22px;
+}
+
+.network-node small {
+    margin-top: 5px;
+    font-family: monospace;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    color: #84919d;
+}
+
+/* NODE POSITIONS */
+.email-node {
+    left: 0;
+    bottom: 4px;
+}
+
+.github-node {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+.linkedin-node {
+    right: 0;
+    bottom: 4px;
+}
+
+/* CONNECTION LINES */
+.network-line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        rgba(53, 199, 255, 0.05),
+        rgba(53, 199, 255, 0.6),
+        rgba(53, 199, 255, 0.05)
+    );
+    transform-origin: left center;
+    opacity: 0.25;
+}
+
+.line-email {
+    width: 98px;
+    left: 62px;
+    top: 137px;
+    transform: rotate(-22deg);
+}
+
+.line-github {
+    width: 75px;
+    left: 130px;
+    top: 95px;
+    transform: rotate(-90deg);
+}
+
+.line-linkedin {
+    width: 98px;
+    left: 138px;
+    top: 114px;
+    transform: rotate(22deg);
+}
+
+/* SIGNAL DOTS */
+.signal-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #35c7ff;
+    box-shadow:
+        0 0 7px #35c7ff,
+        0 0 14px rgba(53, 199, 255, 0.7);
+    opacity: 0;
+}
+
+/* CLICK HINT */
+.animation-hint {
+    margin-top: 18px;
+    padding: 7px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(53, 199, 255, 0.25);
+    background: rgba(53, 199, 255, 0.04);
+    color: #7ccff0;
+    font-family: monospace;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.contacts-visual:hover .animation-hint {
+    border-color: rgba(53, 199, 255, 0.55);
+    background: rgba(53, 199, 255, 0.08);
+    color: #b9ecff;
+}
+
+/* ======================================
+   PULSE & ORBIT - VIBRANT VERSION
+====================================== */
+
+/* OUTER ORBIT RING */
+.network-display::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 235px;
+    height: 235px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(53, 199, 255, 0.42);
+
+    box-shadow:
+        0 0 10px rgba(53, 199, 255, 0.28),
+        0 0 25px rgba(53, 199, 255, 0.16),
+        inset 0 0 18px rgba(53, 199, 255, 0.08);
+
+    pointer-events: none;
+}
+
+/* INNER PULSE RING */
+.network-display::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 95px;
+    height: 95px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border: 3px solid rgba(53, 199, 255, 0.65);
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+/* ======================================
+   SIGNAL DOTS
+====================================== */
+
+.signal-dot {
+    position: absolute;
+
+    left: calc(50% - 5px);
+    top: calc(50% - 5px);
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 6px #ffffff,
+        0 0 12px #35c7ff,
+        0 0 24px #35c7ff,
+        0 0 36px rgba(53, 199, 255, 0.85);
+
+    opacity: 0;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+/* ======================================
+   ACTIVE CORE
+====================================== */
+
+.contacts-visual.network-active .network-core {
+    animation: pulseCoreVibrant 3.6s ease;
+}
+
+/* ======================================
+   EXPANDING PULSE
+====================================== */
+
+.contacts-visual.network-active .network-display::after {
+    animation: expandingPulseVibrant 1.6s ease-out;
+}
+
+/* ======================================
+   ORBIT SIGNALS
+====================================== */
+
+.contacts-visual.network-active .signal-email {
+    animation: orbitSignalVibrant 2.4s linear 0.55s;
+}
+
+.contacts-visual.network-active .signal-github {
+    animation: orbitSignalVibrant 2.4s linear 0.75s;
+}
+
+.contacts-visual.network-active .signal-linkedin {
+    animation: orbitSignalVibrant 2.4s linear 0.95s;
+}
+
+/* ======================================
+   CONNECTION LINES
+====================================== */
+
+.contacts-visual.network-active .network-line {
+    animation: connectionGlowVibrant 3.6s ease;
+}
+
+/* ======================================
+   NODES
+====================================== */
+
+.contacts-visual.network-active .github-node {
+    animation: nodePulseVibrant 1.4s ease 1.15s;
+}
+
+.contacts-visual.network-active .linkedin-node {
+    animation: nodePulseVibrant 1.4s ease 1.45s;
+}
+
+.contacts-visual.network-active .email-node {
+    animation: nodePulseVibrant 1.4s ease 1.75s;
+}
+
+/* ======================================
+   STATUS
+====================================== */
+
+.contacts-visual.network-active .animation-hint {
+    color: #ffffff;
+
+    border-color: rgba(53, 255, 174, 0.7);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(53, 199, 255, 0.10),
+            rgba(214, 74, 255, 0.10),
+            rgba(255, 187, 51, 0.10)
+        );
+
+    box-shadow:
+        0 0 10px rgba(53, 255, 174, 0.22),
+        0 0 20px rgba(53, 199, 255, 0.12);
+}
+
+/* ======================================
+   CORE PULSE
+====================================== */
+
+@keyframes pulseCoreVibrant {
+
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+        border-color: rgba(53, 199, 255, 0.35);
+
+        box-shadow:
+            inset 0 0 20px rgba(53, 199, 255, 0.08),
+            0 0 15px rgba(53, 199, 255, 0.10);
+    }
+
+    18% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.18);
+
+        border-color: #ff4fd8;
+
+        box-shadow:
+            inset 0 0 24px rgba(255, 79, 216, 0.22),
+            0 0 10px #ff4fd8,
+            0 0 25px rgba(255, 79, 216, 0.65),
+            0 0 45px rgba(53, 199, 255, 0.45),
+            0 0 70px rgba(255, 187, 51, 0.22);
+    }
+
+    35% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.04);
+
+        border-color: #35c7ff;
+
+        box-shadow:
+            inset 0 0 24px rgba(53, 199, 255, 0.18),
+            0 0 18px rgba(53, 199, 255, 0.55),
+            0 0 42px rgba(53, 199, 255, 0.30);
+    }
+
+    68% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.10);
+
+        border-color: #ffd34f;
+
+        box-shadow:
+            inset 0 0 26px rgba(255, 211, 79, 0.18),
+            0 0 12px #ffd34f,
+            0 0 28px rgba(255, 211, 79, 0.55),
+            0 0 50px rgba(53, 199, 255, 0.30);
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+        border-color: rgba(53, 199, 255, 0.35);
+    }
+}
+
+/* ======================================
+   BRIGHT EXPANDING WAVE
+====================================== */
+
+@keyframes expandingPulseVibrant {
+
+    0% {
+        width: 95px;
+        height: 95px;
+
+        opacity: 1;
+
+        border-color: #ffffff;
+
+        box-shadow:
+            0 0 10px #ffffff,
+            0 0 20px #35c7ff,
+            0 0 35px #ff4fd8,
+            0 0 55px rgba(255, 187, 51, 0.75);
+    }
+
+    35% {
+        border-color: #ff4fd8;
+
+        box-shadow:
+            0 0 15px #ff4fd8,
+            0 0 35px rgba(255, 79, 216, 0.75),
+            0 0 60px rgba(53, 199, 255, 0.55);
+    }
+
+    65% {
+        border-color: #35c7ff;
+
+        box-shadow:
+            0 0 20px #35c7ff,
+            0 0 45px rgba(53, 199, 255, 0.65);
+    }
+
+    100% {
+        width: 235px;
+        height: 235px;
+
+        opacity: 0;
+
+        border-color: #ffd34f;
+
+        box-shadow:
+            0 0 20px rgba(255, 211, 79, 0),
+            0 0 60px rgba(53, 199, 255, 0);
+    }
+}
+
+/* ======================================
+   ORBITING SIGNALS
+====================================== */
+
+@keyframes orbitSignalVibrant {
+
+    0% {
+        opacity: 0;
+
+        background: #ff4fd8;
+
+        transform:
+            rotate(0deg)
+            translateX(117px)
+            rotate(0deg);
+    }
+
+    8% {
+        opacity: 1;
+
+        box-shadow:
+            0 0 8px #ff4fd8,
+            0 0 18px #ff4fd8,
+            0 0 32px rgba(255, 79, 216, 0.75);
+    }
+
+    35% {
+        background: #35c7ff;
+
+        box-shadow:
+            0 0 8px #35c7ff,
+            0 0 18px #35c7ff,
+            0 0 34px rgba(53, 199, 255, 0.85);
+    }
+
+    65% {
+        background: #ffd34f;
+
+        box-shadow:
+            0 0 8px #ffd34f,
+            0 0 18px #ffd34f,
+            0 0 34px rgba(255, 211, 79, 0.85);
+    }
+
+    92% {
+        opacity: 1;
+
+        background: #55ffb0;
+
+        box-shadow:
+            0 0 8px #55ffb0,
+            0 0 20px #55ffb0,
+            0 0 38px rgba(85, 255, 176, 0.75);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            rotate(360deg)
+            translateX(117px)
+            rotate(-360deg);
+    }
+}
+
+/* ======================================
+   CONNECTION LINE GLOW
+====================================== */
+
+@keyframes connectionGlowVibrant {
+
+    0%,
+    25% {
+        opacity: 0.22;
+    }
+
+    45% {
+        opacity: 0.75;
+
+        background: #35c7ff;
+
+        box-shadow:
+            0 0 6px #35c7ff,
+            0 0 14px rgba(53, 199, 255, 0.55);
+    }
+
+    70% {
+        opacity: 1;
+
+        background: linear-gradient(
+            90deg,
+            #35c7ff,
+            #ff4fd8,
+            #ffd34f
+        );
+
+        box-shadow:
+            0 0 8px rgba(53, 199, 255, 0.75),
+            0 0 16px rgba(255, 79, 216, 0.35);
+    }
+
+    100% {
+        opacity: 0.25;
+    }
+}
+
+/* ======================================
+   NODE PULSE
+====================================== */
+
+@keyframes nodePulseVibrant {
+
+    0% {
+        opacity: 0.75;
+    }
+
+    30% {
+        opacity: 1;
+
+        border-color: #35c7ff;
+
+        box-shadow:
+            0 0 10px #35c7ff,
+            0 0 22px rgba(53, 199, 255, 0.50);
+    }
+
+    55% {
+        opacity: 1;
+
+        border-color: #ff4fd8;
+
+        box-shadow:
+            0 0 12px #ff4fd8,
+            0 0 26px rgba(255, 79, 216, 0.48);
+    }
+
+    75% {
+        border-color: #ffd34f;
+
+        box-shadow:
+            0 0 12px #ffd34f,
+            0 0 28px rgba(255, 211, 79, 0.45);
+    }
+
+    100% {
+        opacity: 0.75;
+    }
+}
 
 /* ======================================
    COMMUNICATION ANIMATION
