@@ -1,6 +1,10 @@
 const contentArea = document.getElementById("hero-content");
 const navButtons = document.querySelectorAll(".main-nav button");
 
+/* ======================================
+   PAGE SECTIONS
+====================================== */
+
 const sections = {
   about: `
     <h2>About Me</h2>
@@ -100,6 +104,79 @@ const sections = {
           </div>
           <h3>React</h3>
           <p>JSX, components and interactive user interfaces</p>
+        </div>
+
+      </div>
+
+    </div>
+  `,
+
+  projects: `
+    <div class="projects-showcase">
+
+      <div class="projects-sidebar">
+
+        <div class="projects-heading">
+          <h2>Projects</h2>
+
+          <p>
+            A selection of practical web development projects demonstrating
+            interface design, JavaScript functionality, and problem-solving.
+          </p>
+        </div>
+
+        <div class="projects-list">
+
+          <div class="project-link" data-project="nvip">
+            <span class="project-number">01</span>
+
+            <span>
+              <strong>NVIP</strong>
+              <small>Vehicle Identification & Patrol System</small>
+            </span>
+          </div>
+
+          <div class="project-link" data-project="ssa">
+            <span class="project-number">02</span>
+
+            <span>
+              <strong>Project 25 SSA</strong>
+              <small>Security System Dashboard</small>
+            </span>
+          </div>
+
+          <div class="project-link" data-project="inspiration26">
+            <span class="project-number">03</span>
+
+            <span>
+              <strong>Inspiration-26</strong>
+              <small>Interactive JavaScript Project</small>
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="projects-display">
+
+        <div id="project-content" class="project-content-placeholder">
+
+          <div class="project-tech-visual">
+            <div class="tech-ring"></div>
+            <div class="tech-core">&lt;/&gt;</div>
+          </div>
+
+          <h3>Project Showcase</h3>
+
+          <p>
+            Select a project to view its description and screenshots.
+          </p>
+
+          <div class="project-status">
+            SYSTEM READY
+          </div>
+
         </div>
 
       </div>
@@ -218,72 +295,13 @@ const sections = {
       </div>
 
     </div>
-  `,
-
-  projects: `
-    <div class="projects-showcase">
-
-      <div class="projects-sidebar">
-
-        <div class="projects-heading">
-          <h2>Projects</h2>
-
-          <p>
-            A selection of practical web development projects demonstrating
-            interface design, JavaScript functionality, and problem-solving.
-          </p>
-        </div>
-
-        <div class="projects-list">
-
-          <div class="project-link" data-project="inspiration26">
-            <span class="project-number">01</span>
-
-            <span>
-              <strong>Inspiration-26</strong>
-              <small>Interactive JavaScript Project</small>
-            </span>
-          </div>
-
-          <div class="project-link" data-project="ssa">
-            <span class="project-number">02</span>
-
-            <span>
-              <strong>Project 25 SSA</strong>
-              <small>Security System Dashboard</small>
-            </span>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="projects-display">
-
-        <div id="project-content" class="project-content-placeholder">
-
-          <div class="project-tech-visual">
-            <div class="tech-ring"></div>
-            <div class="tech-core">&lt;/&gt;</div>
-          </div>
-
-          <h3>Project Showcase</h3>
-
-          <p>
-            Select a project to view its description and screenshots.
-          </p>
-
-          <div class="project-status">
-            SYSTEM READY
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
   `
 };
+
+
+/* ======================================
+   PROJECT IMAGE HINT
+====================================== */
 
 const addImageHint = () => {
   const oldHint = document.querySelector(".image-hint");
@@ -292,21 +310,28 @@ const addImageHint = () => {
     oldHint.remove();
   }
 
+  const container = document.querySelector(".project-images");
+
+  if (!container) return;
+
   const hint = document.createElement("p");
 
   hint.className = "image-hint";
   hint.textContent =
     "Tip: Click image to enlarge, double-click for full view.";
 
-  const container = document.querySelector(".project-images");
-
-  if (container) {
-    container.after(hint);
-  }
+  container.after(hint);
 };
+
+
+/* ======================================
+   PROJECT IMAGE INTERACTION
+====================================== */
 
 const setupProjectImages = () => {
   const imgs = document.querySelectorAll(".project-screenshot");
+
+  if (imgs.length === 0) return;
 
   const lightbox = document.getElementById("image-lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
@@ -317,7 +342,6 @@ const setupProjectImages = () => {
 
     img.addEventListener("click", () => {
       timer = setTimeout(() => {
-
         imgs.forEach((otherImg) => {
           if (otherImg !== img) {
             otherImg.classList.remove("large");
@@ -325,35 +349,127 @@ const setupProjectImages = () => {
         });
 
         img.classList.toggle("large");
-
       }, 200);
     });
 
     img.addEventListener("dblclick", () => {
       clearTimeout(timer);
 
-      lightbox.style.display = "flex";
-      lightboxImg.src = img.src;
+      if (lightbox && lightboxImg) {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+      }
     });
   });
 
-  closeBtn.onclick = () => {
-    lightbox.style.display = "none";
-  };
-
-  lightbox.onclick = (e) => {
-    if (e.target === lightbox) {
+  if (closeBtn && lightbox) {
+    closeBtn.onclick = () => {
       lightbox.style.display = "none";
-    }
-  };
+    };
+  }
+
+  if (lightbox) {
+    lightbox.onclick = (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+      }
+    };
+  }
 
   addImageHint();
 };
 
+
+/* ======================================
+   PROJECT DISPLAY
+====================================== */
+
 const showProject = (projectId) => {
   const projectContent = document.getElementById("project-content");
 
+  if (!projectContent) return;
+
   let html = "";
+
+  /* NVIP */
+
+  if (projectId === "nvip") {
+    html = `
+      <div class="project-details project-nvip">
+
+        <span class="project-type">
+          FLAGSHIP DEVELOPMENT PROJECT
+        </span>
+
+        <h3>NVIP — National Vehicle Identification Program</h3>
+
+        <p>
+          A vehicle identification and patrol monitoring system designed
+          as a practical digital solution for vehicle verification and
+          law-enforcement-style monitoring. NVIP combines interactive
+          vehicle identification, QR-based access, beacon monitoring,
+          vehicle tracking, status classification, and simulated
+          enforcement alerts within a responsive web interface.
+        </p>
+
+        <div class="project-tech-stack">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>Responsive UI</span>
+          <span>Git</span>
+          <span>GitHub</span>
+        </div>
+
+        <div class="project-actions">
+
+          <a
+            href="https://butiza-hub.github.io/NVIP-ZA/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-action-btn primary-action"
+          >
+            LIVE DEMO
+          </a>
+
+          <a
+            href="https://github.com/Butiza-hub/NVIP-ZA"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-action-btn"
+          >
+            VIEW CODE
+          </a>
+
+        </div>
+
+        <div class="project-images">
+
+          <img
+            src="images/nvip/nvip1.png"
+            class="project-screenshot"
+            alt="NVIP main project interface"
+          >
+
+          <img
+            src="images/nvip/nvip2.png"
+            class="project-screenshot"
+            alt="NVIP Patrol Beacon Monitor"
+          >
+
+          <img
+            src="images/nvip/nvip3.png"
+            class="project-screenshot"
+            alt="NVIP QR vehicle identification interface"
+          >
+
+        </div>
+
+      </div>
+    `;
+  }
+
+  /* INSPIRATION-26 */
 
   if (projectId === "inspiration26") {
     html = `
@@ -392,6 +508,8 @@ const showProject = (projectId) => {
       </div>
     `;
   }
+
+  /* PROJECT 25 SSA */
 
   if (projectId === "ssa") {
     html = `
@@ -449,6 +567,10 @@ const showProject = (projectId) => {
 };
 
 
+/* ======================================
+   CONTACT NETWORK ANIMATION
+====================================== */
+
 const setupContactAnimation = () => {
   const contactVisual = document.getElementById("contact-animation");
 
@@ -457,7 +579,6 @@ const setupContactAnimation = () => {
   let animationRunning = false;
 
   contactVisual.addEventListener("click", () => {
-
     if (animationRunning) return;
 
     animationRunning = true;
@@ -493,7 +614,6 @@ const setupContactAnimation = () => {
     }, 2550);
 
     setTimeout(() => {
-
       contactVisual.classList.remove("network-active");
 
       if (hint) {
@@ -501,11 +621,14 @@ const setupContactAnimation = () => {
       }
 
       animationRunning = false;
-
     }, 3600);
-
   });
 };
+
+
+/* ======================================
+   MAIN NAVIGATION
+====================================== */
 
 navButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -518,6 +641,8 @@ navButtons.forEach((btn) => {
     });
 
     btn.classList.add("active");
+
+    /* PROJECT SELECTORS */
 
     if (section === "projects") {
       document.querySelectorAll(".project-link").forEach((link) => {
@@ -533,11 +658,18 @@ navButtons.forEach((btn) => {
       });
     }
 
+    /* CONTACT ANIMATION */
+
     if (section === "contacts") {
       setupContactAnimation();
     }
   });
 });
+
+
+/* ======================================
+   INITIAL PAGE
+====================================== */
 
 navButtons[0].classList.add("active");
 
