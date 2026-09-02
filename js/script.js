@@ -495,6 +495,19 @@ const showProject = (projectId) => {
           <span>GitHub</span>
         </div>
 
+        <div class="project-actions">
+
+          <a
+            href="https://butiza-hub.github.io/Inspiration-26/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-action-btn primary-action"
+          >
+            LIVE DEMO
+          </a>
+
+        </div>
+
         <div class="project-images">
 
           <img
@@ -533,6 +546,19 @@ const showProject = (projectId) => {
           <span>JavaScript</span>
           <span>Local Storage</span>
           <span>GitHub Pages</span>
+        </div>
+
+        <div class="project-actions">
+
+          <a
+            href="https://butiza-hub.github.io/ssa-root-7.7/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-action-btn primary-action"
+          >
+            LIVE DEMO
+          </a>
+
         </div>
 
         <div class="project-images">
