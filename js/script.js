@@ -184,6 +184,61 @@ const sections = {
     </div>
   `,
 
+  /* ======================================
+     MY CV
+  ====================================== */
+
+cv: `
+  <div class="cv-showcase">
+
+    <div class="cv-details">
+
+      <span class="project-type">
+        CURRICULUM VITAE
+      </span>
+
+      <h2>My CV</h2>
+
+      <p>
+        View my Junior Front-End Developer CV for an overview of my
+        technical skills, development projects, education, certifications,
+        and previous professional experience.
+      </p>
+
+      <div class="project-tech-stack">
+        <span>Front-End Development</span>
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>React</span>
+      </div>
+
+      <div class="project-actions">
+
+        <a
+          href="documents/cv.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="project-action-btn primary-action"
+        >
+          VIEW CV
+        </a>
+
+        <a
+          href="documents/cv.pdf"
+          download
+          class="project-action-btn"
+        >
+          DOWNLOAD CV
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+`,
+
   contacts: `
     <div class="contacts-showcase">
 
@@ -299,6 +354,7 @@ const sections = {
 };
 
 
+
 /* ======================================
    PROJECT IMAGE HINT
 ====================================== */
@@ -322,6 +378,7 @@ const addImageHint = () => {
 
   container.after(hint);
 };
+
 
 
 /* ======================================
@@ -378,6 +435,7 @@ const setupProjectImages = () => {
 
   addImageHint();
 };
+
 
 
 /* ======================================
@@ -593,6 +651,7 @@ const showProject = (projectId) => {
 };
 
 
+
 /* ======================================
    CONTACT NETWORK ANIMATION
 ====================================== */
@@ -652,6 +711,7 @@ const setupContactAnimation = () => {
 };
 
 
+
 /* ======================================
    MAIN NAVIGATION
 ====================================== */
@@ -691,6 +751,7 @@ navButtons.forEach((btn) => {
     }
   });
 });
+
 
 
 /* ======================================
