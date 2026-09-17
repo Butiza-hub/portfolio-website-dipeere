@@ -145,7 +145,6 @@ const sections = {
             </span>
           </div>
 
-          <!-- NEW -->
           <div class="project-link" data-project="jammming">
             <span class="project-number">03</span>
 
@@ -189,7 +188,7 @@ const sections = {
      MY CV
   ====================================== */
 
-cv: `
+  cv: `
   <div class="cv-showcase">
 
     <div class="cv-details">
@@ -216,22 +215,9 @@ cv: `
 
       <div class="project-actions">
 
-        <a
-          href="documents/cv.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-action-btn primary-action"
-        >
-          VIEW CV
-        </a>
+        <a href="documents/cv.pdf" target="_blank" rel="noopener noreferrer" class="project-action-btn primary-action">VIEW CV</a>
 
-        <a
-          href="documents/cv.pdf"
-          download
-          class="project-action-btn"
-        >
-          DOWNLOAD CV
-        </a>
+        <a href="documents/cv.pdf" download class="project-action-btn">DOWNLOAD CV</a>
 
       </div>
 
@@ -255,10 +241,7 @@ cv: `
 
         <div class="contact-list">
 
-          <a
-            class="contact-card"
-            href="mailto:butinyana2017@gmail.com"
-          >
+          <a class="contact-card" href="mailto:butinyana2017@gmail.com">
             <div class="contact-icon email-contact">
               ✉
             </div>
@@ -269,12 +252,7 @@ cv: `
             </div>
           </a>
 
-          <a
-            class="contact-card"
-            href="https://github.com/Butiza-hub"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="contact-card" href="https://github.com/Butiza-hub" target="_blank" rel="noopener noreferrer">
             <div class="contact-icon">
               <i class="devicon-github-original"></i>
             </div>
@@ -285,12 +263,7 @@ cv: `
             </div>
           </a>
 
-          <a
-            class="contact-card"
-            href="https://www.linkedin.com/in/daniel-dipeere-958713175/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="contact-card" href="https://www.linkedin.com/in/daniel-dipeere-958713175/" target="_blank" rel="noopener noreferrer">
             <div class="contact-icon">
               <i class="devicon-linkedin-plain colored"></i>
             </div>
@@ -355,7 +328,6 @@ cv: `
 };
 
 
-
 /* ======================================
    PROJECT IMAGE HINT
 ====================================== */
@@ -379,7 +351,6 @@ const addImageHint = () => {
 
   container.after(hint);
 };
-
 
 
 /* ======================================
@@ -438,7 +409,6 @@ const setupProjectImages = () => {
 };
 
 
-
 /* ======================================
    PROJECT DISPLAY
 ====================================== */
@@ -449,6 +419,67 @@ const showProject = (projectId) => {
   if (!projectContent) return;
 
   let html = "";
+
+  /* NVIP */
+
+  if (projectId === "nvip") {
+    html = `
+      <div class="project-details project-nvip">
+
+        <span class="project-type">
+          FLAGSHIP DEVELOPMENT PROJECT
+        </span>
+
+        <h3>NVIP — National Vehicle Identification Program</h3>
+
+        <p>
+          A vehicle identification and patrol monitoring system designed
+          as a practical digital solution for vehicle verification and
+          law-enforcement-style monitoring. NVIP combines interactive
+          vehicle identification, QR-based access, beacon monitoring,
+          vehicle tracking, status classification, and simulated
+          enforcement alerts within a responsive web interface.
+        </p>
+
+        <div class="project-tech-stack">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>Responsive UI</span>
+          <span>Git</span>
+          <span>GitHub</span>
+        </div>
+
+        <div class="project-actions">
+          <a href="https://butiza-hub.github.io/NVIP-ZA/" target="_blank" rel="noopener noreferrer" class="project-action-btn primary-action">LIVE DEMO</a>
+          <a href="https://github.com/Butiza-hub/NVIP-ZA" target="_blank" rel="noopener noreferrer" class="project-action-btn">VIEW CODE</a>
+        </div>
+
+        <div class="project-images">
+
+          <img
+            src="images/nvip/nvip1.png"
+            class="project-screenshot"
+            alt="NVIP main project interface"
+          >
+
+          <img
+            src="images/nvip/nvip2.png"
+            class="project-screenshot"
+            alt="NVIP Patrol Beacon Monitor"
+          >
+
+          <img
+            src="images/nvip/nvip3.png"
+            class="project-screenshot"
+            alt="NVIP QR vehicle identification interface"
+          >
+
+        </div>
+
+      </div>
+    `;
+  }
 
   /* JAMMMING */
 
@@ -482,25 +513,8 @@ const showProject = (projectId) => {
         </div>
 
         <div class="project-actions">
-
-          
-            href="https://butiza-hub.github.io/Jammming/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-action-btn primary-action"
-          >
-            LIVE DEMO
-          </a>
-
-          
-            href="https://github.com/Butiza-hub/Jammming"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-action-btn"
-          >
-            VIEW CODE
-          </a>
-
+          <a href="https://butiza-hub.github.io/Jammming/" target="_blank" rel="noopener noreferrer" class="project-action-btn primary-action">LIVE DEMO</a>
+          <a href="https://github.com/Butiza-hub/Jammming" target="_blank" rel="noopener noreferrer" class="project-action-btn">VIEW CODE</a>
         </div>
 
         <div class="project-images">
@@ -509,59 +523,6 @@ const showProject = (projectId) => {
             src="images/jammming.png"
             class="project-screenshot"
             alt="Jammming project screenshot"
-          >
-
-        </div>
-
-      </div>
-    `;
-  }
-
-  /* INSPIRATION-26 */
-
-  if (projectId === "inspiration26") {
-    html = `
-      <div class="project-details">
-
-        <span class="project-type">
-          INTERACTIVE WEB PROJECT
-        </span>
-
-        <h3>Inspiration-26</h3>
-
-        <p>
-          A dynamic inspirational message generator built to demonstrate
-          JavaScript interaction, DOM manipulation, responsive design,
-          and practical front-end development.
-        </p>
-
-        <div class="project-tech-stack">
-          <span>HTML5</span>
-          <span>CSS3</span>
-          <span>JavaScript</span>
-          <span>Git</span>
-          <span>GitHub</span>
-        </div>
-
-        <div class="project-actions">
-
-          <a
-            href="https://butiza-hub.github.io/Inspiration-26/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-action-btn primary-action"
-          >
-            LIVE DEMO
-          </a>
-
-        </div>
-
-        <div class="project-images">
-
-          <img
-            src="images/inspiration.png"
-            class="project-screenshot"
-            alt="Inspiration-26 project screenshot"
           >
 
         </div>
@@ -597,16 +558,7 @@ const showProject = (projectId) => {
         </div>
 
         <div class="project-actions">
-
-          <a
-            href="https://butiza-hub.github.io/ssa-root-7.7/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-action-btn primary-action"
-          >
-            LIVE DEMO
-          </a>
-
+          <a href="https://butiza-hub.github.io/ssa-root-7.7/" target="_blank" rel="noopener noreferrer" class="project-action-btn primary-action">LIVE DEMO</a>
         </div>
 
         <div class="project-images">
@@ -639,7 +591,6 @@ const showProject = (projectId) => {
 
   setupProjectImages();
 };
-
 
 
 /* ======================================
@@ -701,7 +652,6 @@ const setupContactAnimation = () => {
 };
 
 
-
 /* ======================================
    MAIN NAVIGATION
 ====================================== */
@@ -741,7 +691,6 @@ navButtons.forEach((btn) => {
     }
   });
 });
-
 
 
 /* ======================================
