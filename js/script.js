@@ -145,12 +145,13 @@ const sections = {
             </span>
           </div>
 
-          <div class="project-link" data-project="inspiration26">
+          <!-- NEW -->
+          <div class="project-link" data-project="jammming">
             <span class="project-number">03</span>
 
             <span>
-              <strong>Inspiration-26</strong>
-              <small>Interactive JavaScript Project</small>
+              <strong>Jammming</strong>
+              <small>React Music Search & Playlist App</small>
             </span>
           </div>
 
@@ -449,40 +450,41 @@ const showProject = (projectId) => {
 
   let html = "";
 
-  /* NVIP */
+  /* JAMMMING */
 
-  if (projectId === "nvip") {
+  if (projectId === "jammming") {
     html = `
-      <div class="project-details project-nvip">
+      <div class="project-details">
 
         <span class="project-type">
-          FLAGSHIP DEVELOPMENT PROJECT
+          MUSIC PLAYLIST APPLICATION
         </span>
 
-        <h3>NVIP — National Vehicle Identification Program</h3>
+        <h3>Jammming</h3>
 
         <p>
-          A vehicle identification and patrol monitoring system designed
-          as a practical digital solution for vehicle verification and
-          law-enforcement-style monitoring. NVIP combines interactive
-          vehicle identification, QR-based access, beacon monitoring,
-          vehicle tracking, status classification, and simulated
-          enforcement alerts within a responsive web interface.
+          A React application for searching music, building a custom playlist,
+          and saving it for later — including audio preview playback and full
+          playlist management. Originally built on the Spotify Web API, the
+          search feature was independently re-engineered to use the iTunes
+          Search API after a Spotify API policy change restricted free-tier
+          developer access mid-project.
         </p>
 
         <div class="project-tech-stack">
-          <span>HTML5</span>
-          <span>CSS3</span>
-          <span>JavaScript</span>
-          <span>Responsive UI</span>
+          <span>React</span>
+          <span>Vite</span>
+          <span>iTunes Search API</span>
+          <span>Web Audio API</span>
+          <span>localStorage</span>
           <span>Git</span>
           <span>GitHub</span>
         </div>
 
         <div class="project-actions">
 
-          <a
-            href="https://butiza-hub.github.io/NVIP-ZA/"
+          
+            href="https://butiza-hub.github.io/Jammming/"
             target="_blank"
             rel="noopener noreferrer"
             class="project-action-btn primary-action"
@@ -490,8 +492,8 @@ const showProject = (projectId) => {
             LIVE DEMO
           </a>
 
-          <a
-            href="https://github.com/Butiza-hub/NVIP-ZA"
+          
+            href="https://github.com/Butiza-hub/Jammming"
             target="_blank"
             rel="noopener noreferrer"
             class="project-action-btn"
@@ -504,21 +506,9 @@ const showProject = (projectId) => {
         <div class="project-images">
 
           <img
-            src="images/nvip/nvip1.png"
+            src="images/jammming.png"
             class="project-screenshot"
-            alt="NVIP main project interface"
-          >
-
-          <img
-            src="images/nvip/nvip2.png"
-            class="project-screenshot"
-            alt="NVIP Patrol Beacon Monitor"
-          >
-
-          <img
-            src="images/nvip/nvip3.png"
-            class="project-screenshot"
-            alt="NVIP QR vehicle identification interface"
+            alt="Jammming project screenshot"
           >
 
         </div>
